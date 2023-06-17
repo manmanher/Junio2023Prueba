@@ -8,12 +8,41 @@
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
-    //id 'application'
+	id 'java-library'
+	id 'eclipse'
+	//para poder publicar paquetes en github
+    id 'maven-publish'    
 }
 
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/enrsancar1/Junio2023")         
+            credentials {
+            //las propiedades gpr.user y gpr.key están configuradas en gradle.properties en el raiz del proyecto, y se añade a .gitignore para que no se suban
+            //O bien configuro las variables de entorno GITHUB_LOGIN y GITHUB_PACKAGES
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_LOGIN")
+                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_PACKAGES")
+                }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            
+            groupId = 'muit.fs.junio22'
+            artifactId = 'JunioPrueba2023'
+            version = '0.1.0'
+
+            from components.java
+        }
+       
+    }
 }
 
 dependencies {
@@ -29,11 +58,6 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
-}
-
-application {
-    // Define the main class for the application.
-    mainClass = 'muit.fs.junio22.App'
 }
 
 tasks.named('test') {
