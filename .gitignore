@@ -1,21 +1,31 @@
+# Ignore Gradle project-specific cache directory
 .gradle
-**/build/
-!src/**/build/
 
-# Ignore Gradle GUI config
-gradle-app.setting
+#Fichero de configuracion de gradle.
+gradle.properties
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
-
-# Avoid ignore Gradle wrappper properties
-!gradle-wrapper.properties
-
-# Cache of project
-.gradletasknamecache
-
-# Eclipse Gradle plugin generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
+#Ignoro los directorios que crea el IDE en el espacio de trabajo, que no se suba a git
+.settings
+.metadata
 .classpath
+.project
+.gitattributes
+
+# Ignore Gradle build output directory
+build
+
+# Ignora la carpeta de compilados
+bin
+
+# Log file
+*.log
+
+# No quiero subir paquetes
+*.jar
+
+# Excluyo el gradle wrapper de esta regla, sí quiero controlarlo
+!gradle/wrapper/gradle-wrapper.jar
+
+# No quiero subir clases compiladas
+*.class
+
