@@ -36,7 +36,7 @@ publishing {
         gpr(MavenPublication) {
             
             groupId = 'muit.fs.junio22'
-            artifactId = 'JunioPrueba2023'
+            artifactId = 'junio2023prueba'
             version = '0.1.0'
 
             from components.java
