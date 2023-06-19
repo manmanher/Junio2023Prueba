@@ -1,0 +1,13 @@
+name: Flujo para mostrar el uvus por pantalla si se crea un nuevo issue en el proyecto o se cambia de columna
+on:
+  issues:  
+    types: [opened]
+  project_column:
+    types: [moved]
+jobs:
+  Aviso:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mensaje por pantalla con mi uvus
+        run: |
+          echo "${{ github.actor}}"
