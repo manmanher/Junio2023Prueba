@@ -4,6 +4,7 @@ on:
     types: [opened]
   project_column:
     types: [updated]
+  workflow_dispatch:
 jobs:
   Aviso:
     runs-on: ubuntu-latest
