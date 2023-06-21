@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send email
-        uses: devellany/send-mailer@v1.0.2
+        uses: devellany/send-mail@45dbe31722b9c29635bc9d60315d420218093c56
         with:
           host: smtp.google.com
           # Optional port (defaults to 465)
@@ -21,4 +21,3 @@ jobs:
           body: your messages.
           # Optional content type (defaults to text/plain)
           contentType: text/plain
-  
