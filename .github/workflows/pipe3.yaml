@@ -6,18 +6,9 @@ jobs:
   Correo:
     runs-on: ubuntu-latest
     steps:
-      - name: Send email
-        uses: devellany/send-mail@45dbe31722b9c29635bc9d60315d420218093c56
+      - name: Correo
+        uses: cinotify/github-action@feaa5fed1588048bd8e14d6b9c26964f9d164a25
         with:
-          host: smtp.google.com
-          # Optional port (defaults to 465)
-          port: 465
-          account: manmanher@alum.us.es
-          password: KAiruchi99
-          sender: manmanher@alum.us.es
-          from: manmanher@alum.us.es
           to: manmanher@alum.us.es
-          subject: mail title.
-          body: your messages.
-          # Optional content type (defaults to text/plain)
-          contentType: text/plain
+          subject: "Hola que tal"
+          body: "Hola hola"
