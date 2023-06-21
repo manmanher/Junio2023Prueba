@@ -1,4 +1,4 @@
-name: Flujo para ejecutar secuencialmente las tareas de construcción y prueba
+name: Correo
 on:
   push:  
     branches: [manmanher]
