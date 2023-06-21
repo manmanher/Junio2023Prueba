@@ -4,11 +4,13 @@ on:
     branches: [manmanher]
 jobs:
   Correo:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  
+    env:
+      CORREO: ${{ secrets.CORREO }}
     steps:
       - name: Correo
         uses: cinotify/github-action@feaa5fed1588048bd8e14d6b9c26964f9d164a25
         with:
-          to: manmanher@alum.us.es
+          to: $CORREO
           subject: "Hola que tal"
           body: "Hola hola"
