@@ -12,10 +12,10 @@ jobs:
           host: smtp.google.com
           # Optional port (defaults to 465)
           port: 465
-          account: ${{secrets.ACCOUNT}}
-          password: ${{secrets.MAIL_PASSWORD}}
+          account: manmanher@alum.us.es
+          password: KAiruchi99
           sender: manmanher@alum.us.es
-          from: ${{secrets.MAIL_ADDRESS}}
+          from: manmanher@alum.us.es
           to: manmanher@alum.us.es
           subject: mail title.
           body: your messages.
